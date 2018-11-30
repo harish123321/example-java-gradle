@@ -1,3 +1,6 @@
+plugins {
+  id "org.sonarqube" version "2.6.2"
+}
 group 'com.srcclr'
 version '1.0-SNAPSHOT'
 
