@@ -35,8 +35,8 @@ def map=['b972e6a21334f168dbeb58a755111a0410e43950':'http://10.133.10.229:9000',
 
 for(item in map)
 {
-log.info item.value // this will print value1 value2
-log.info item // this will print key1=value1 key2=value2
+println  item.value // this will print value1 value2
+ println  item // this will print key1=value1 key2=value2
 }
 
  sonarqube {
