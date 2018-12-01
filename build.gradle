@@ -32,7 +32,7 @@ dependencies {
 
 
 task myTask {
-sonarqube= {
+sonarqube {
     properties {
       
   
@@ -45,14 +45,14 @@ sonarqube= {
     
    
     doLast {
-        sonarqube()
+        'sonarqube'
    }
 }
 
 
 
 task myTask1(dependsOn: myTask) {
-sonarqube= {
+sonarqube{
 properties {
         property "sonar.host.url",  "http://10.133.10.232:9000"
          property "sonar.login", "339eaf23ebd100baedbdf6b235dd7860f6072b69"
@@ -62,7 +62,7 @@ properties {
     
    
     doLast {
-        sonarqube()
+        'sonarqube'
    }
 }
 
