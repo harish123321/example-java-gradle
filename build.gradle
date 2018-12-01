@@ -39,7 +39,7 @@ url.add("http://10.133.10.232:9000");
        for (String item : url) {
          System.out.println(item)
         
-        property "sonar.host.url", item
+       // property "sonar.host.url", item
         property "sonar.login", "b972e6a21334f168dbeb58a755111a0410e43950"
       
         property "sonar.projectName", "Sample3"
