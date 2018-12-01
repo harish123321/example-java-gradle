@@ -42,12 +42,12 @@ sonarqube{
         property "sonar.projectName", "Sample6"
        } 
     }
-    sonarqube
+    
     
    
-   /* doFirst {
-        'sonarqube'
-   }*/
+    doFirst {
+        sonarqube
+   }
 }
 
 
@@ -67,7 +67,6 @@ properties {
    }
 }
 
-build
 
 
 
