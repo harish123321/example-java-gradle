@@ -30,7 +30,7 @@ dependencies {
 }
 
 
-
+/*
 def map=['b972e6a21334f168dbeb58a755111a0410e43950':'http://10.133.10.229:9000','339eaf23ebd100baedbdf6b235dd7860f6072b69':'http://10.133.10.232:9000']
 
 for(item in map)
@@ -53,17 +53,21 @@ println  item.value // this will print value1 value2
 }
 
 build.finalizedBy('sonarqube')
-/*
+*/
+
 sonarqube {
     properties {
         property "sonar.host.url",  "http://10.133.10.232:9000"
         
         property "sonar.login", "339eaf23ebd100baedbdf6b235dd7860f6072b69"
-        property "sonar.projectName", "Sample3"
+        property "sonar.projectName", "Sample1"
+    }
+    properties {
+        property "sonar.host.url",  "http://10.133.10.229:9000"
+         property "sonar.login", "b972e6a21334f168dbeb58a755111a0410e43950"
+        property "sonar.projectName", "Sample1"
     }
 }
 
 
-build.finalizedBy('sonarqube','sonarqube2')
-
-*/
+build.finalizedBy('sonarqube')
