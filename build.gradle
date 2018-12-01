@@ -31,48 +31,45 @@ dependencies {
 
 
 
-def map=['b972e6a21334f168dbeb58a755111a0410e43950':'http://10.133.10.229:9000','339eaf23ebd100baedbdf6b235dd7860f6072b69':'http://10.133.10.232:9000']
-
-for(item in map)
-{
-println  item.value // this will print value1 value2
- println  item.key // this will print key1=value1 key2=value2
-}
-      for(item in map)
-{
- sonarqube {
+task myTask {
+sonarqube {
     properties {
       
   
-        property "sonar.host.url", item.value
-        property "sonar.login", item.key
+        property "sonar.host.url", "http://10.133.10.229:9000"
+        property "sonar.login", "b972e6a21334f168dbeb58a755111a0410e43950"
       
-        property "sonar.projectName", "Sample5"
+        property "sonar.projectName", "Sample6"
        } 
     }
-
-
-build.finalizedBy('sonarqube')
-}
-/*
-task sona{sonarqube{
-properties {
-        property "sonar.host.url",  "http://10.133.10.229:9000"
-         property "sonar.login", "b972e6a21334f168dbeb58a755111a0410e43950"
-        property "sonar.projectName", "Sample4"
-    }
-}
-}
-
-sonarqube {
-    properties {
-        property "sonar.host.url",  "http://10.133.10.232:9000"
-        
-        property "sonar.login", "339eaf23ebd100baedbdf6b235dd7860f6072b69"
-        property "sonar.projectName", "Sample4"
-    }
+    
+   
+    doLast {
+        sonarqube()
    }
+}
 
 
-build.finalizedBy('sonarqube')
-*/
+
+task myTask1(dependsOn: myTask) {
+sonarqube{
+properties {
+        property "sonar.host.url",  "http://10.133.10.232:9000"
+         property "sonar.login", "339eaf23ebd100baedbdf6b235dd7860f6072b69"
+        property "sonar.projectName", "Sample4"
+    }
+}
+    
+    }
+    doLast {
+        sonarqube()
+   }
+}
+
+build.finalizedBy('myTask1')
+
+
+
+
+
+
