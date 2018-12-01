@@ -36,7 +36,7 @@ def map=['b972e6a21334f168dbeb58a755111a0410e43950':'http://10.133.10.229:9000',
 for(item in map)
 {
 println  item.value // this will print value1 value2
- println  item // this will print key1=value1 key2=value2
+ println  item.key // this will print key1=value1 key2=value2
 }
 
  sonarqube {
@@ -45,7 +45,7 @@ println  item.value // this will print value1 value2
         for(item in map)
 {
        // property "sonar.host.url", item.value
-        property "sonar.login", item
+        property "sonar.login", item.key
       
         property "sonar.projectName", "Sample3"
        } 
