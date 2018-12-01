@@ -60,7 +60,7 @@ properties {
     }
 }
     
-    }
+   
     doLast {
         sonarqube()
    }
