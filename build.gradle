@@ -42,7 +42,7 @@ sonarqube{
         property "sonar.projectName", "Sample6"
        } 
     }
-    'sonarqube'
+    sonarqube
     
    
    /* doFirst {
@@ -63,11 +63,11 @@ properties {
     
    
     doLast {
-        'sonarqube'
+        sonarqube
    }
 }
 
-build.finalizedBy('myTask1')
+build
 
 
 
