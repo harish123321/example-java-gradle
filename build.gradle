@@ -28,19 +28,28 @@ dependencies {
     compile group: 'net.bull.javamelody', name: 'javamelody-core', version: '1.59.0'
     compile group: 'com.orientechnologies', name: 'orientdb-server', version: '2.1.9'
 }
+
+List<String> url = new ArrayList<String>();
+list.add("http://10.133.10.229:9000");
+list.add("http://10.133.10.232:9000");
+
+
  sonarqube {
     properties {
-               
-        property "sonar.host.url", "http://10.133.10.229:9000"
+       for (String item : list) {
+         System.out.println(item)
+        
+        property "sonar.host.url", item
         property "sonar.login", "b972e6a21334f168dbeb58a755111a0410e43950"
       
         property "sonar.projectName", "Sample3"
-        
+       } 
     }
 }
-//build.finalizedBy('sonarqube1')
 
-sonarqube2() {
+build.finalizedBy('sonarqube')
+/*
+sonarqube {
     properties {
         property "sonar.host.url",  "http://10.133.10.232:9000"
         
@@ -51,3 +60,5 @@ sonarqube2() {
 
 
 build.finalizedBy('sonarqube','sonarqube2')
+
+*/
