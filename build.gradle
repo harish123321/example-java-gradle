@@ -36,7 +36,7 @@ list.add("http://10.133.10.232:9000");
 
  sonarqube {
     properties {
-       for (String item : list) {
+       for (String item : url) {
          System.out.println(item)
         
         property "sonar.host.url", item
