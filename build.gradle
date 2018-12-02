@@ -43,7 +43,7 @@ sonarqube {
        } 
     }
     build.finalizedBy('sonarqube')
-    catch(Exception ex) {
+    } catch(Exception ex) {
          println("Catching the exception");
          } finally {
          sonarqube {
@@ -62,6 +62,7 @@ sonarqube {
 
 
 build.finalizedBy('sonarqube')
+}
 
 
 
