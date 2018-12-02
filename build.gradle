@@ -31,8 +31,8 @@ dependencies {
 
 
 
-
-sonarqube{
+try {
+sonarqube {
     properties {
       
   
@@ -42,6 +42,22 @@ sonarqube{
         property "sonar.projectName", "Sample6"
        } 
     }
+    build.finalizedBy('sonarqube')
+    catch(Exception ex) {
+         println("Catching the exception");
+         } finally {
+         sonarqube {
+    properties {
+      
+  
+        property "sonar.host.url", "http://10.133.10.232:9000"
+        property "sonar.login", "339eaf23ebd100baedbdf6b235dd7860f6072b69"
+      
+        property "sonar.projectName", "Sample6"
+       } 
+         
+      }
+         
     
 
 
