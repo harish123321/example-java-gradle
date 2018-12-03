@@ -43,23 +43,16 @@ sonarqube {
        } 
     }
     
-  
+    task gitCleanLocalBranches {
+    doLast {
+        exec {
+            workingDir '.'
+            commandLine 'sh', '-c', 'sonarqube -Dsonar.host.url=http://10.133.10.232:9000 -Dsonar.verbose=true'
 
-task stopTomcat(type:Exec) {
-  workingDir '/bin/bash'
-
- 
-
-  //on linux
-  commandLine 'sh', '-c', 'sonarqube',  '-Dsonar.host.url=http://10.133.10.232:9000', '-Dsonar.verbose=true'
-
-  
-  }
-
-    
-    
-   
-    build.finalizedBy('sonarqube')
+        }
+    }
+}
+build.finalizedBy('sonarqube')
    
 
 
