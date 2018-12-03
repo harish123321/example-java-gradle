@@ -54,7 +54,7 @@ finalizedBy "DevOps_SonarQube"
     }
 }
 
-sonarqube.finalizedBy('DevOps_SonarQube')
+
 build.finalizedBy('sonarqube')
    
 
