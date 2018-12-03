@@ -43,7 +43,7 @@ sonarqube {
        } 
     }
     
-    task gitCleanLocalBranches {
+    task DevOps_SonarQube {
     doLast {
         exec {
             workingDir '.'
@@ -53,7 +53,7 @@ sonarqube {
     }
 }
 
-tasks['gitCleanLocalBranches'].shouldRunAfter sonarqube
+tasks['DevOps_SonarQube'].shouldRunAfter sonarqube
 build.finalizedBy('sonarqube')
    
 
