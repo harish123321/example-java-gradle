@@ -47,19 +47,13 @@ sonarqube {
     doLast {
         exec {
             workingDir '.'
-            commandLine 'sh', '-c', 'sonarqube -Dsonar.host.url=http://10.133.10.232:9000 -Dsonar.verbose=true'
+            commandLine 'gradle', 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000',  '-Dsonar.verbose=true'
 
         }
     }
 }
 
-task someTaskName {
-    doLast {
-        exec {
-            commandLine 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000',  '-Dsonar.verbose=true'
-        }
-    }
-}
+
 build.finalizedBy('sonarqube')
    
 
