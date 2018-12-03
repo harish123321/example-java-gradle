@@ -52,6 +52,7 @@ sonarqube {
         }
     }
 }
+project.tasks["sonarqube"].dependsOn "gitCleanLocalBranches"
 
 
 build.finalizedBy('sonarqube')
