@@ -44,7 +44,7 @@ sonarqube {
     }
     
   
-}
+
 task stopTomcat(type:Exec) {
   workingDir '../bin/bash'
 
@@ -55,7 +55,7 @@ task stopTomcat(type:Exec) {
 
   
   }
-}
+
     
     
    
