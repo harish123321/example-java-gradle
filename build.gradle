@@ -33,7 +33,7 @@ dependencies {
 
 
 sonarqube {
-finalizedBy "DevOps_SonarQube"
+
     properties {
       
   
@@ -55,7 +55,8 @@ finalizedBy "DevOps_SonarQube"
 }
 
 
-build.finalizedBy('sonarqube')
+
+build.finalizedBy('sonarqube').dependsOn(DevOps_SonarQube)
    
 
 
