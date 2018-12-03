@@ -53,7 +53,7 @@ sonarqube {
     }
 }
 
-tasks['DevOps_SonarQube'].shouldRunAfter sonarqube
+sonarqube.finalizedBy('DevOps_SonarQube')
 build.finalizedBy('sonarqube')
    
 
