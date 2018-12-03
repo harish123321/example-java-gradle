@@ -47,7 +47,8 @@ sonarqube {
     commandLine 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000', '-Dsonar.verbose=true'
 }
     
-    sonarqube.finalizedBy('sonarqube1')
+    
+    sonarqube.dependsOn sonarqube1
     build.finalizedBy('sonarqube')
    
 
