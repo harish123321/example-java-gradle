@@ -43,11 +43,11 @@ sonarqube {
        } 
     }
     
-    task sonarqube(type: Exec) {
+    task sonarqube1(type: Exec) {
     commandLine 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000', '-Dsonar.verbose=true'
 }
     
-    
+    sonarqube.finalizedBy('sonarqube1')
     build.finalizedBy('sonarqube')
    
 
