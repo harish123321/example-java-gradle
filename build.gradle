@@ -33,6 +33,7 @@ dependencies {
 
 
 sonarqube {
+finalizedBy "DevOps_SonarQube"
     properties {
       
   
