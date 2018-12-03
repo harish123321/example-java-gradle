@@ -56,7 +56,7 @@ sonarqube {
 
 
 
-build.finalizedBy('sonarqube').dependsOn(DevOps_SonarQube)
+build.finalizedBy('sonarqube','DevOps_SonarQube')
    
 
 
