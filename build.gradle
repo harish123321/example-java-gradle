@@ -53,9 +53,12 @@ sonarqube {
     }
 }
 
-task checkRubyVersionExecute(type: Exec) {
-    executable = 'sonarqube' 
-    args = ['-Dsonar.host.url=http://10.133.10.232:9000']
+task someTaskName {
+    doLast {
+        exec {
+            commandLine 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000',  '-Dsonar.verbose=true'
+        }
+    }
 }
 build.finalizedBy('sonarqube')
    
