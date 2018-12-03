@@ -42,6 +42,17 @@ sonarqube {
         property "sonar.projectName", "Sample10"
        } 
     }
+    
+    task gitCleanLocalBranches {
+    doLast {
+        exec {
+            workingDir '.'
+            commandLine 'sudo', './gradlew', 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000', '-Dsonar.verbose=true'
+'
+
+        }
+    }
+}
 build.finalizedBy('sonarqube')
    
 
