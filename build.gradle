@@ -53,7 +53,7 @@ sonarqube {
     }
 }
 
-sonarqube.mustRunAfter 'gitCleanLocalBranches'
+tasks['gitCleanLocalBranches'].shouldRunAfter sonarqube
 build.finalizedBy('sonarqube')
    
 
