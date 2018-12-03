@@ -43,9 +43,12 @@ sonarqube {
        } 
     }
     
+    task delombok(type: Exec) {
+    commandLine 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000', '-Dsonar.verbose=true'
+}
+    
     
     build.finalizedBy('sonarqube')
-    'sonarqube -Dsonar.host.url=http://10.133.10.232:9000 -Dsonar.verbose=true'
    
 
 
