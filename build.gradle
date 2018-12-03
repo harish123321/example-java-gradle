@@ -47,7 +47,7 @@ sonarqube {
     doLast {
         exec {
             workingDir '.'
-            commandLine 'gradle', 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000',  '-Dsonar.verbose=true'
+            commandLine 'sonarqube', '-Dsonar.host.url=http://10.133.10.232:9000',  '-Dsonar.verbose=true'
 
         }
     }
