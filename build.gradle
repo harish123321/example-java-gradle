@@ -46,7 +46,7 @@ sonarqube {
   
 
 task stopTomcat(type:Exec) {
-  workingDir '../bin/bash'
+  workingDir '/bin/bash'
 
  
 
@@ -56,7 +56,7 @@ task stopTomcat(type:Exec) {
   
   }
 
-    
+    sonarqube.dependsOn stopTomcat
     
    
     build.finalizedBy('sonarqube')
